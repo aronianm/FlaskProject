@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}">
+<head>
+    <title>Personal Page </title>
+</head>
+<body>
+
+<h1>Welcome</h1>
+<nav>
+  <ul class='load_nav'>
+    <li class='main_nav' style="list-style-type:none"><a href="/">Home</a></li>
+    <li class='main_nav' style="list-style-type:none"><a href="/login">Login</a></li>
+    <li class='main_nav' style="list-style-type:none"><a href="/register">Register</a></li>
+    <li class='main_nav' style="list-style-type:none"><a href="{% if current_user.is_authenticated %} /profile/{{ current_user.username  }} {% else %} /login {% endif %}">Profile</a></li>
+  </ul>
+</nav>
+<p> If you havent already click on register, and sign up for the website, else login </p>
+<p> If you are already logged in click on profile </p>
+</body>
+</html>

@@ -1,0 +1,29 @@
+{% import "bootstrap/wtf.html" as wtf %}
+<!DOCTYPE html>
+<html>
+<link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}">
+<head>
+    <title>Profile Page </title>
+</head>
+<body>
+
+<h1><h1>Hi, {{ current_user.firstname }} {{ current_user.lastname }}!</h1></h1>
+<nav>
+  <ul class='load_nav'>
+    <li class='main_nav' style="list-style-type:none"><a href="/">Home</a></li>
+    <li class='main_nav' style="list-style-type:none"><a href="{{ url_for('logout') }}">Logout</a></li>
+    <li class='main_nav' style="list-style-type:none"><a href="{{ url_for('games') }}">Games and Projects</a></li>
+    <li class='main_nav' style="list-style-type:none"><a href="{{ url_for('addpost') }}">Blog</a></li>
+  </ul>
+</nav>
+<h1>Blog Page</h1>
+<form class='form' method='POST' action='/login'>
+  <h2> Write a Blog </h2>
+  {{ form.hidden_tag() }}
+  {{ wtf.form_field(form.title) }}
+  {{ wtf.form_field(form.content) }}
+  <button type='submit'>Submit</button>
+</form>
+
+</body>
+</html>

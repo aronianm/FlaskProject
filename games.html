@@ -1,0 +1,28 @@
+{% import "bootstrap/wtf.html" as wtf %}
+<!DOCTYPE html>
+<html>
+<link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}">
+<head>
+    <title>Profile Page </title>
+</head>
+<body>
+
+<h1><h1>Hi, {{ current_user.firstname }} {{ current_user.lastname }}!</h1></h1>
+<nav>
+  <ul class='load_nav'>
+    <li class='main_nav' style="list-style-type:none"><a href="/">Home</a></li>
+    <li class='main_nav' style="list-style-type:none"><a href="{{ url_for('logout') }}">Logout</a></li>
+    <li class='main_nav' style="list-style-type:none"><a href="{{ url_for('games') }}">Games and Projects</a></li>
+    <li class='main_nav' style="list-style-type:none"><a href="{{ url_for('addpost') }}">Blog</a></li>
+  </ul>
+</nav>
+<h1> {{ current_user.username }}!</h1>
+<nav>
+  <ul class='game_nav' >
+    <li style="list-style-type:none"><a href="{{ url_for('gamesone') }}">Color Game</a></li>
+  </ul>
+</nav>
+<h1>Pick a game above </h1>
+
+</body>
+</html>

@@ -1,0 +1,60 @@
+h1 {
+  color: green;
+}
+.load_nav {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+}
+
+.main_nav {
+    float: left;
+}
+
+.main_nav a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+/* Change the link color to #111 (black) on hover */
+.main_nav a:hover {
+    background-color: #111;
+}
+
+.first_paragraph {
+  padding-right: 30%;
+
+}
+
+body {
+  background-color: lightgray;
+
+}
+
+.form {
+  color: green;
+  box-sizing: border-box;
+}
+
+input {
+    position: absolute;
+    left: 10%;
+    border: hidden;
+    border-width: 200px;
+
+}
+
+.message {
+  color: pink;
+  background-color: gray;
+
+}
+
+button{
+  background-color: #4CAF50;
+}

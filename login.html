@@ -1,0 +1,41 @@
+{% import "bootstrap/wtf.html" as wtf %}
+
+<!DOCTYPE html>
+<html>
+<link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}">
+<head>
+    <title>Personal Page </title>
+</head>
+<body>
+
+<h1>Welcome</h1>
+<nav>
+  <ul class='load_nav'>
+    <li class='main_nav'  style="list-style-type:none"><a href="/">Home</a></li>
+    <li class='main_nav'  style="list-style-type:none"><a href="/login">Login</a></li>
+    <li class='main_nav'  style="list-style-type:none"><a href="/register">Register</a></li>
+  </ul>
+</nav>
+{% block content %}
+  <div class='container'>
+    {% with messages = get_flashed_messages() %}
+    {% if messages %}
+    <ul class='message'>
+        {% for message in messages %}
+      <li>{{ message }}</li>
+    {% endfor %}
+    {% endif %}
+    {% endwith %}
+   </ul>
+    <form class='form' method='POST' action='/login'>
+      <h2> Please Sign in </h2>
+      {{ form.hidden_tag() }}
+      {{ wtf.form_field(form.username) }}
+      {{ wtf.form_field(form.password) }}
+      {{ wtf.form_field(form.remember) }}
+      <button type='submit'>Submit</button>
+    </form>
+  </div>
+{% endblock %}
+</body>
+</html>

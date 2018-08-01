@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}">
+<head>
+    <title>Profile Page </title>
+</head>
+<body>
+
+<h1><h1>Hi, {{ current_user.firstname }} {{ current_user.lastname }}!</h1></h1>
+<nav>
+  <ul class='load_nav'>
+    <li class='main_nav' style="list-style-type:none"><a href="/">Home</a></li>
+    <li class='main_nav' style="list-style-type:none"><a href="{{ url_for('logout') }}">Logout</a></li>
+    <li class='main_nav' style="list-style-type:none"><a href="{{ url_for('games') }}">Games and Projects</a></li>
+    <li class='main_nav' style="list-style-type:none"><a href="{{ url_for('addpost') }}">Blog</a></li>
+  </ul>
+</nav>
+<div class="first_paragraph">
+<h1> {{ username }}!</h1>
+<img src="{{url_for('static', filename='profile1.jpg')}}" />
+<div class="first_paragraph">
+<p> My name is Michael Aronian. I am 26 years old. I am from Boston, Massachusetts. I went to Salem State University
+    to study Mathematics. I played football and baseball. I was voted most competitive athlete at Chelmsford High School in 2010. I recently
+  started learning web development, and though I am new I am very eager to learn more. Above is my dog Charley. He is  three years old now and has a
+    birthday on July 1st, and he is my life.</p>
+</div>
+
+
+
+</div>
+
+
+</div>
+</body>
+</html>
